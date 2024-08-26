@@ -1,28 +1,27 @@
-async function enviarScript(scriptText){
-	const lines = scriptText.split(/[\n\t]+/).map(line => line.trim()).filter(line => line);
-	main = document.querySelector("#main"),
-	textarea = main.querySelector(`div[contenteditable="true"]`)
-	
-	if(!textarea) throw new Error("Não há uma conversa aberta")
-	
-	for(const line of lines){
-		console.log(line)
-	
-		textarea.focus();
-		document.execCommand('insertText', false, line);
-		textarea.dispatchEvent(new Event('change', {bubbles: true}));
-	
-		setTimeout(() => {
-			(main.querySelector(`[data-testid="send"]`) || main.querySelector(`[data-icon="send"]`)).click();
-		}, 100);
-		
-		if(lines.indexOf(line) !== lines.length - 1) await new Promise(resolve => setTimeout(resolve, 250));
-	}
-	
-	return lines.length;
-}
+import time
+import pyautogui
+import pyfiglet
 
-enviarScript(`
+figlet_text = pyfiglet.figlet_format("lucmsilva")
+
+print(figlet_text)
+print(f"Starting in 5 seconds...\nPlease put your Telegram or Discord client on focus now.")
+
+time.sleep(5)
+
+def enviar_script(script_text):
+    linhas = [linha.strip() for linha in script_text.splitlines() if linha.strip()]
+    
+    for linha in linhas:
+        pyautogui.write(linha)
+        pyautogui.press('enter')
+	# 250ms timing to avoid breaking ToS (you are will be banned of anywhere anyways)
+        time.sleep(0.25)
+
+    return len(linhas)
+
+# shrek script
+linhas_enviadas = enviar_script("""
 SHREK
 
 Written by
@@ -3700,4 +3699,6 @@ black) Oh, that's funny. Oh. Oh. I can't
 breathe. I can't breathe.
 
 THE END
-`).then(e => console.log(`Código finalizado, ${e} mensagens enviadas`)).catch(console.error)
+""")
+
+print(f"Código finalizado, {linhas_enviadas} mensagens enviadas")
