@@ -1,23 +1,29 @@
-# SendScriptWhatsApp
+# SendScriptEverywhere
 
-Código para enviar o Script inteiro de Shrek ou Bee Movie para seus amigos ou grupos do WhatsApp
+Código para enviar o Script inteiro de Shrek ou Bee Movie para seus amigos ou grupos do WhatsApp, Discord, Telegram, etc.
 
 ## Utilização
+- Requer Python mais recente
+- Requer Git se você for clonar o repo inteiro
 
-Abra [shrekSendScript.js](https://github.com/Matt-Fontes/SendScriptWhatsApp/blob/main/shrekSendScript.js)
-Ou
-Abra [beeMovieSendScript.js](https://github.com/Matt-Fontes/SendScriptWhatsApp/blob/main/beeMovieSendScript.js)
+Baixe o código usando esses passos:
+- clique no botão verde chamado "Code" lá em cima da tela
+- depois clique em "Download ZIP"
+- extraia e vá para o passo das dependências
 
-Copie todo o conteúdo (clique em raw -> ctrl+a -> ctrl+c)
+Ou clone com o Git usando:
+```
+git clone https://github.com/lucmsilva651/SendScriptEverywhere/
+```
 
-No WhatsApp Web abra o console do Browser
-
-|  ⚠️ Aviso importante, numa atualização recente do Google Chrome, está sendo impedido que qualquer script seja colado no Console.|
-|--|
-|  ***Para contornar esse problema, o console do desenvolvedor espera receber um confirmação textual escrevendo no console: "allow pasting"***| 
-|Após isso será permitido colar e continuar a execução do script|
-
-
-Cole o código no console e aperte Enter
+Abra o Prompt de comando e instale as dependências com
+```
+pip install -r requirements.txt
+```
+Agora, rode o script com:
+```
+python [nome_do_script].py
+```
+Onde `[nome_do_script]` é o script que tu baixou daqui do GitHub.
 
 Pronto
