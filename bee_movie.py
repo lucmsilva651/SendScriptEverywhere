@@ -20,7 +20,7 @@ def enviar_script(script_text):
 
     return len(linhas)
 
-# shrek script
+# bee movie script
 linhas_enviadas = enviar_script("""
 BEE Movie
 
